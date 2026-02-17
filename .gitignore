@@ -1,13 +1,12 @@
 .venv/
 __pycache__/
 *.pyc
-github_data.db
 *.log
 .env
 
 # Sensitive
 *.pem
-tokens.db
+
 
 # LaTeX build artifacts
 report.aux
