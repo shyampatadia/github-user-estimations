@@ -5,6 +5,8 @@
 \usepackage{graphicx}
 \usepackage{multirow}
 \usepackage{float}
+\usepackage{url}
+
 
 \settopmatter{printacmref=false}
 \renewcommand\footnotetextcopyrightpermission[1]{}
@@ -14,9 +16,12 @@
 
 \title{Estimating the Total Number of Valid GitHub User Accounts via Stratified Random Sampling}
 
-\author{Author Name}
-\affiliation{\institution{University Name}}
-\email{author@university.edu}
+\thanks{Code and data: \url{https://github.com/shyampatadia/github-user-estimations}. Live dashboard: \url{https://github-user-estimation-webapp.vercel.app/realtime}}
+
+
+\author{Shyam Patadia}
+\affiliation{\institution{Worcester Polytechnique Institute}}
+\email{spatadia@wpi.edu}
 
 \begin{abstract}
 We estimate the total number of valid (active/existing) GitHub user accounts across the platform's sequential ID space of approximately 262 million IDs. Using stratified random sampling with proportional allocation across seven strata, we queried 16,000 randomly selected IDs via the GitHub REST API. Our stratified estimator yields a point estimate of approximately \textbf{214.1 million} valid accounts (95\% bootstrap CI: [212.5M, 215.7M]). We validate our methodology on 8,000 exhaustively collected ground truth IDs and demonstrate both unbiasedness and correctness through partition analysis. The overall account validity rate is 81.8\%, with 95.8\% being individual users and 4.2\% organizations.
