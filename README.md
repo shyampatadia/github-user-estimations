@@ -1,9 +1,3 @@
-# GitHub User Estimation
-
-Estimates the total number of valid GitHub users using stratified random sampling with bootstrap inference.
-
-GitHub assigns sequential integer IDs to users, but not all IDs are active — some are deleted or suspended. This project samples ~100K IDs across the full ID space (~262M), measures the validity rate per stratum, and extrapolates to estimate the true total.
-
 ## Setup
 
 ```bash
@@ -28,9 +22,9 @@ INSERT INTO tokens (id, token, description) VALUES (1, 'ghp_xxxx...', 'PAT 1');
 ## Usage
 
 ```bash
-uv run python run.py                      # Full pipeline (~20 hrs collection + analysis)
-uv run python run.py --phase 1            # Ground truth only
-uv run python run.py --phase 3            # Full-space sampling only
+uv run python run.py                      # Full pipeline 
+uv run python run.py --phase 1            # Sample collection
+uv run python run.py --phase 3            # Full-space sampling
 uv run python run.py --skip-phase1 --skip-phase3   # Analysis + figures only (no API calls)
 ```
 
